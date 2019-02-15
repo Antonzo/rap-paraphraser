@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <style>
+            body {
+                font-family: Slab serif;
+                font-size: 18pt;
+                background: #94b8c5;
+            }
+            p {
+                text-align: center;
+                white-space: normal;
+                width: 70%;
+            }
+            a, a:visited, a:active { color: white; text-decoration: none; }
+            a:hover { color: red; text-decoration: underline; }
+            h1, h2 {text-align: center; }
+            .center {
+                width: 200px; 
+                padding: 10px; 
+                margin: auto; 
+                background: #edeef0; 
+            }
+            #tabs li {font-size: 13pt; text-align: center;}
+            #tabs li a {width: 90%;}
+        </style>
+        <link rel="stylesheet" href="src/jquery-ui.css">
+        <script src="src/jquery-1.12.4.js"></script>
+        <script src="src/jquery-ui.js"></script>
+        <script>
+            $( function() {
+                $( "#tabs" ).tabs();
+            } );
+        </script>
+    </head>
+    <body link="black" vlink="black" alink="black">
+        <h1>Rap-Paraphraser</h1>
+        <div  id = "desc" align="center">
+            <p>
+                Добро пожаловать на сайт для перефразирования текста любого типа (в том числе и одного слова) в семантическом поле русского репа с добавлением реп-сленга.
+                Алгоритм перефразирования основан на использовании нейронной сети Word2Vec, обученной на текстах более, чем 9500 песен русских исполнителей, 
+                которая находит близкие по семантике слова в контексте русского репа.
+            </p>
+        </div>
+        <div align="center">
+            <p>На нашем сайте Вы можете:</p>
+            <a href="cgi-bin/rephrase.py" style="text-align: right;">перефразировать текст</a><br>
+            <a href="cgi-bin/associate.py" style="text-align: left;">подобрать слова-ассоциаты</a>
+            <p>а так же просмотреть примеры:</p>
+        </div>
+        <div id="tabs" class="center" style="width: 60%; font-size: 15pt; background: #edeef0;">
+            <ul>
+                <li style="width: 43%"><a href="#tabs-1">М.А. Булгаков "Мастер и Маргарита"</a></li>
+                <li style="width: 19%"><a href="#tabs-2">similarity('ум')</a></li>
+                <li style="width: 31%"><a href="#tabs-3">А.А. Блок "Незнакомка"</a></li>
+            </ul>
+            <div id="tabs-1">
+                    <p>[Оригинал]  Никогда не разговаривайте с неизвестными. Однажды весною, в час небывало жаркого заката, в Москве, на Патриарших прудах, 
+                    появились два гражданина. ...</p>
+                    <p>[Результат] Никогда не разговаривайте с неизвестными. Однажды весною, в <b>да-да-да-да-да-да-да-да-д кокаииииинннннного</b> жаркого
+                    <b>рассвета</b>, в <b>столице</b>, на Патриарших <b>вхламах</b>, появились два <b>артефакта</b>. ...</p>
+            </div>
+            <div id="tabs-2" align="center">
+                    <p> 1. сходить<br>2. сойти<br>3. сводить<br>4. свести <br>5. наживной<br>
+                        6. сума<br>7. самообман<br>8. смелый<br>9. двигать-двигать<br>10. укротить </p>
+            </div>
+            <div id="tabs-3" align="center">
+                    <p>[Оригинал]
+                            Глухие тайны мне поручены,<br>Мне чье-то солнце вручено,<br> 
+                            И все души моей излучины <br>Пронзило терпкое вино. <br>
+                            И перья страуса склоненные <br>В моем качаются мозгу,<br> 
+                            И очи синие бездонные <br>Цветут на дальнем берегу.<br> 
+                            В моей душе лежит сокровище,<br> И ключ поручен только мне! <br>
+                            Ты право, пьяное чудовище!<br> Я знаю: истина в вине.<br>
+                    </p>
+                    <p>[Результат]
+                        Глухие нежности мне поручены,<br>Мне невидимое облако вручено,<br>
+                        И все души моей излучины<br>Пронзило терпкое вино.<br> 
+                        И помелья джеки склоненные<br>В моем качаются ганнибале,<br> 
+                        И очи синие бездонные<br> Цветут на северном корабле.<br> 
+                        В моей душе худеет рабство,<br>И замок поручен только мне!<br> 
+                        Ты правило, пьяное чудовище!<br>Я знаю: ярость в морщине.</p>
+            </div>
+    </div>
+  </body>
+</html>
